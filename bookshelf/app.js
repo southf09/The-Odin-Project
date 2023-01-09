@@ -1,3 +1,8 @@
+//Bookshelf Application
+
+//Creates an empty bookshelf, and a constructor for the purpose
+//of creating new books to put on your bookshelf
+
 let bookshelf = [];
 
 function Book(title, author, pages, read) {
@@ -7,12 +12,21 @@ function Book(title, author, pages, read) {
     (this.read = read);
 }
 
-const shelf = document.querySelector(".shelf");
-const theHobbit = new Book("The Hobbit", "Tolkien", 540, "Yes");
-const wayKings = new Book("Way of Kings", "Sanderson", 850, "No");
+//Two placeholder books, 'The Hobbit' and 'The Way of Kings' are created
+//and put on the bookshelf as placeholders for styling purposes while the books
+//application is in development. These books could also be added directly into
+//the 'bookshelf' array, but I wanted to demonstrate the constructor function
 
+const theHobbit = new Book("The Hobbit", "Tolkien", 540, "Yes");
+const wayKings = new Book("The Way of Kings", "Sanderson", 850, "No");
 bookshelf.push(theHobbit);
 bookshelf.push(wayKings);
+
+const shelf = document.querySelector(".shelf");
+
+//This function creates new cards (book covers), on which the book details and
+//'remove book' button are added. These cards are then appended (added) to the
+//bookshelf for storage
 
 function createCard(num) {
   //Book Cover
@@ -36,7 +50,9 @@ function createCard(num) {
   const bookPages = document.createElement("li");
   bookPages.innerText = bookshelf[num].pages;
 
-  //Have read button
+  //Conditional statement assigns the 'Have Read' or 'Have Not Read' class
+  //based on your input when constructing the book page
+
   if (bookshelf[num].read.toLowerCase() === "yes") {
     const haveRead = document.createElement("div");
     haveRead.classList.add("have-read-btn");
@@ -61,12 +77,19 @@ function createCard(num) {
   information.appendChild(bookPages);
 }
 
+//The 'Add Book' button is used to pull up the hidden book form
+
 const bookForm = document.querySelector(".book-form");
 const showForm = document.querySelector(".button");
 
 showForm.addEventListener("click", () => {
   bookForm.classList.toggle("hidden");
 });
+
+//After the form is pulled up (no longer hidden), the user may submit
+//their desired information. This information is grabbed onto and used to
+//create a new book with our constructor. The book is then added to the
+//bookshelf and appending to the next open spot
 
 const submitForm = document.querySelector(".submit-btn");
 
@@ -82,9 +105,8 @@ submitForm.addEventListener("click", (e) => {
   bookForm.classList.toggle("hidden");
 });
 
-for (let i = 0; i < bookshelf.length; i++) {
-  createCard(i);
-}
+//The following code allows the 'clear' button that is visible on each book
+//to delete the book from the bookshelf
 
 const clearBook = document.querySelectorAll(".clear-btn");
 
@@ -93,4 +115,11 @@ for (clear of clearBook) {
     const parent = e.target.parentNode;
     parent.remove();
   });
+}
+
+//Iterates through the bookshelf to populate our placeholder books, this will be
+//removed later when we begin with an empty array
+
+for (let i = 0; i < bookshelf.length; i++) {
+  createCard(i);
 }
