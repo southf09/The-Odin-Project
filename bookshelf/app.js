@@ -68,6 +68,10 @@ function createCard(num) {
   const clearBtn = document.createElement("div");
   clearBtn.classList.add("clear-btn");
   clearBtn.innerText = "Clear";
+  clearBtn.addEventListener("click", (e) => {
+    const parent = e.target.parentNode;
+    parent.remove();
+  });
 
   shelf.appendChild(cover);
   cover.appendChild(information);
@@ -104,18 +108,6 @@ submitForm.addEventListener("click", (e) => {
   createCard(bookshelf.length - 1);
   bookForm.classList.toggle("hidden");
 });
-
-//The following code allows the 'clear' button that is visible on each book
-//to delete the book from the bookshelf
-
-const clearBook = document.querySelectorAll(".clear-btn");
-
-for (clear of clearBook) {
-  clear.addEventListener("click", (e) => {
-    const parent = e.target.parentNode;
-    parent.remove();
-  });
-}
 
 //Iterates through the bookshelf to populate our placeholder books, this will be
 //removed later when we begin with an empty array
