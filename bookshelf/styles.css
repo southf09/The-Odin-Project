@@ -166,3 +166,7 @@ h3 {
 .hidden {
   display: none;
 }
+
+.clear-btn {
+  cursor: pointer;
+}
