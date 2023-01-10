@@ -87,22 +87,25 @@ video {
   vertical-align: baseline;
 }
 
+body {
+  background-image: url(images/library.jpg);
+}
+
 .container {
   height: 100vh;
-  background-color: green;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 h1 {
-  margin-top: 2rem;
-  font-size: 3rem;
+  margin: 2rem 0;
+  font-size: 4rem;
   color: white;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -122,6 +125,7 @@ h3 {
   width: 15rem;
   border: 1px solid black;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .form {
@@ -136,6 +140,7 @@ h3 {
   padding: 1rem;
   height: 15rem;
   width: 10rem;
+  background-color: rgba(255, 255, 255, 0.4);
   border: 1px solid black;
 }
 
@@ -145,7 +150,12 @@ h3 {
 
 .have-read-btn {
   border: 1px solid black;
-  width: 2rem;
+  width: 4rem;
+}
+
+.not-read-btn {
+  border: 1px solid black;
+  width: 4rem;
 }
 
 .button {
@@ -160,7 +170,7 @@ h3 {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: green;
+  background-image: url(images/library.jpg);
 }
 
 .hidden {
@@ -169,4 +179,5 @@ h3 {
 
 .clear-btn {
   cursor: pointer;
+  border: 1px solid black;
 }
