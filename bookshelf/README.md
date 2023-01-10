@@ -12,3 +12,7 @@
 - Hidden Forms: a hidden form that contains the input form for book creation waits to be summoned
 - Event Listeners: multiple event listeners are used in this project, to provide functionality ranging from showing hidden forms, to 
 submitting a book form
+
+## Coming Improvements
+- Improved CSS styling: the styling is currently very basic as I continue to focus on function rather than form
+- Local storage will be added to save sessions for later use
