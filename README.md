@@ -6,4 +6,4 @@ Please reference the README.md files contained within each project to view the k
 
 ## Projects List
 
-### Projects contained within this repository will be added here for readability and ease of finding what you are looking for.
+Projects contained within this repository will be added here for readability and ease of finding what you are looking for.
