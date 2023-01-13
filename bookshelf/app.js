@@ -93,7 +93,7 @@ showForm.addEventListener("click", () => {
 //After the form is pulled up (no longer hidden), the user may submit
 //their desired information. This information is grabbed onto and used to
 //create a new book with our constructor. The book is then added to the
-//bookshelf and appending to the next open spot
+//bookshelf and appended to the next open spot
 
 const submitForm = document.querySelector(".submit-btn");
 
